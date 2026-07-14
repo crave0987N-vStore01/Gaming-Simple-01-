@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>සයිබර් රකුසා - ඔන්ලයින් ආරක්ෂණ ක්‍රීඩාව</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦉</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- animated background -->
+<div class="owl-bg" id="owlBg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="fireflies" id="fireflies"></div>
+</div>
+
+<!-- ===================== SPLASH SCREEN ===================== -->
+<section id="splashScreen" class="screen splash-screen active">
+  <div class="splash-content fade-in">
+    <div class="logo-wrap">
+      <div class="logo-owl bounce-in" id="logoOwl">🦉</div>
+      <h1 class="logo-text">සයිබර් <span class="glow-text">රකුසා</span></h1>
+    </div>
+    <p class="splash-sub">සෙල්ලම් කරමින් ආරක්ෂිතව සිටින්න ඉගෙන ගන්න</p>
+    <div class="loading-bar-wrap">
+      <div class="loading-bar" id="loadingBar"></div>
+    </div>
+    <p class="loading-text" id="loadingText">සූදානම් වෙමින්... 0%</p>
+  </div>
+</section>
+
+<!-- ===================== HOME SCREEN ===================== -->
+<section id="homeScreen" class="screen">
+  <header class="top-bar">
+    <div class="brand">
+      <span class="brand-icon">🦉</span>
+      <span class="brand-name">සයිබර් රකුසා</span>
+    </div>
+    <div class="top-bar-buttons">
+      <button class="icon-btn ripple" id="soundToggleBtn" title="ශබ්ද">🔊</button>
+      <button class="icon-btn ripple" id="musicToggleBtn" title="සංගීතය">🎵</button>
+    </div>
+  </header>
+
+  <div class="home-content">
+    <div class="glass-card hero-card zoom-in">
+      <div class="logo-owl small-owl wiggle">🦉</div>
+      <h1 class="hero-title">සයිබර් <span class="glow-text">රකුසා</span></h1>
+      <p class="hero-tag">අන්තර්ජාලයේ අනතුරු හඳුනාගෙන ආරක්ෂිත වීරයෙක් වන්න!</p>
+
+      <div class="home-stats">
+        <div class="home-stat">
+          <span class="stat-value" id="homeHighScore">0</span>
+          <span class="stat-label">ඉහළම ලකුණු</span>
+        </div>
+        <div class="home-stat">
+          <span class="stat-value" id="homeLevel">1</span>
+          <span class="stat-label">මට්ටම</span>
+        </div>
+        <div class="home-stat">
+          <span class="stat-value" id="homeXP">0</span>
+          <span class="stat-label">මුළු XP</span>
+        </div>
+      </div>
+
+      <div class="home-buttons">
+        <button class="btn btn-primary ripple" id="startGameBtn">▶ ක්‍රීඩාව අරඹන්න</button>
+        <button class="btn btn-secondary ripple" id="levelSelectBtn">🗂 මට්ටම් තෝරන්න</button>
+        <button class="btn btn-secondary ripple" id="instructionsBtn">📖 උපදෙස්</button>
+        <button class="btn btn-secondary ripple" id="statsBtn">📊 සංඛ්‍යාලේඛන</button>
+        <button class="btn btn-secondary ripple" id="highScoreBtn">🏆 ඉහළම ලකුණු</button>
+        <button class="btn btn-secondary ripple" id="settingsBtn">⚙ සැකසුම්</button>
+        <button class="btn btn-secondary ripple" id="creditsBtn">✦ නිර්මාණකරු</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INSTRUCTIONS SCREEN ===================== -->
+<section id="instructionsScreen" class="screen">
+  <div class="sub-top-bar">
+    <button class="btn btn-back ripple" data-back="homeScreen">← ආපසු</button>
+    <h2>සෙල්ලම් කරන විදිහ</h2>
+  </div>
+  <div class="content-wrap">
+    <div class="glass-card slide-in">
+      <h3 class="section-title">🎯 අරමුණ</h3>
+      <p>සයිබර් රකුසා යනු ඔබට අන්තර්ජාල ආරක්ෂාව ගැන විනෝදයෙන් ඉගෙන ගැනීමට උදව් කරන ක්‍රීඩාවකි. සිහින් වංචා ඊමේල් (Phishing), ශක්තිමත් මුරපද, ආරක්ෂිත වෙබ් අඩවි, වයිරස් සහ අන්තර්ජාල ආරක්ෂණය පිළිබඳ ප්‍රශ්නවලට නිවැරදිව පිළිතුරු දෙන්න.</p>
+
+      <h3 class="section-title">🕹 පාලනය</h3>
+      <ul class="info-list">
+        <li>නිවැරදි යැයි සිතන පිළිතුර මත click කරන්න.</li>
+        <li>ඕනෑම වේලාවක විවේක ගැනීමට Pause බොත්තම භාවිතා කරන්න.</li>
+        <li>වේලාව බලා සිටින්න — ඉක්මනින් පිළිතුරු දීමෙන් අමතර ලකුණු ලැබේ.</li>
+        <li>ඔබට සීමිත ජීවිත (❤️) ප්‍රමාණයක් ඇත. වැරදි පිළිතුරකින් එකක් අහිමි වේ.</li>
+      </ul>
+
+      <h3 class="section-title">🏅 ලකුණු ලබාගැනීම</h3>
+      <ul class="info-list">
+        <li>නිවැරදි පිළිතුරු වලින් ලකුණු සහ XP ලැබේ.</li>
+        <li>අඛණ්ඩව නිවැරදි පිළිතුරු දීමෙන් Combo Multiplier වැඩි වේ.</li>
+        <li>වැරදීමකින් තොරව මට්ටමක් නිම කිරීමෙන් විශේෂ සම්මාන අගුළු හැරේ.</li>
+      </ul>
+
+      <h3 class="section-title">📚 මට්ටම්</h3>
+      <ul class="info-list">
+        <li>මට්ටම 1 — වංචා ඊමේල් හඳුනාගැනීම</li>
+        <li>මට්ටම 2 — ශක්තිමත් මුරපද අභියෝගය</li>
+        <li>මට්ටම 3 — ආරක්ෂිත වෙබ් අඩවි හඳුනාගැනීම</li>
+        <li>මට්ටම 4 — වයිරස් හඳුනාගැනීම</li>
+        <li>මට්ටම 5 — අන්තර්ජාල ආරක්ෂණ ප්‍රශ්නාවලිය</li>
+        <li>මට්ටම 6 — අවසන් අභියෝගය (මිශ්‍ර ප්‍රශ්න)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEVEL SELECT SCREEN ===================== -->
+<section id="levelSelectScreen" class="screen">
+  <div class="sub-top-bar">
+    <button class="btn btn-back ripple" data-back="homeScreen">← ආපසු</button>
+    <h2>මට්ටමක් තෝරන්න</h2>
+  </div>
+
+  <div class="content-wrap">
+    <div class="difficulty-row">
+      <span class="diff-label">දුෂ්කරතාව:</span>
+      <button class="diff-btn ripple active" data-diff="easy">පහසු</button>
+      <button class="diff-btn ripple" data-diff="medium">මධ්‍යම</button>
+      <button class="diff-btn ripple" data-diff="hard">දුෂ්කර</button>
+    </div>
+
+    <div class="level-grid" id="levelGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== SETTINGS SCREEN ===================== -->
+<section id="settingsScreen" class="screen">
+  <div class="sub-top-bar">
+    <button class="btn btn-back ripple" data-back="homeScreen">← ආපසු</button>
+    <h2>සැකසුම්</h2>
+  </div>
+  <div class="content-wrap">
+    <div class="glass-card slide-in">
+      <div class="setting-row">
+        <span>ශබ්ද</span>
+        <label class="switch">
+          <input type="checkbox" id="settingSound" checked>
+          <span class="slider-toggle"></span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <span>පසුබිම් සංගීතය</span>
+        <label class="switch">
+          <input type="checkbox" id="settingMusic" checked>
+          <span class="slider-toggle"></span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <span>ඇනිමේෂන් මඟහරින්න</span>
+        <label class="switch">
+          <input type="checkbox" id="settingSkipAnim">
+          <span class="slider-toggle"></span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <span>පෙරනිමි දුෂ්කරතාව</span>
+        <select id="settingDifficulty" class="select-box">
+          <option value="easy">පහසු</option>
+          <option value="medium">මධ්‍යම</option>
+          <option value="hard">දුෂ්කර</option>
+        </select>
+      </div>
+      <div class="setting-row">
+        <span>ක්‍රීඩකයාගේ නම</span>
+        <input type="text" id="settingName" class="text-box" placeholder="ඔබේ නම ඇතුළත් කරන්න" maxlength="16">
+      </div>
+
+      <div class="settings-buttons">
+        <button class="btn btn-primary ripple" id="saveSettingsBtn">💾 සුරකින්න</button>
+        <button class="btn btn-danger ripple" id="resetProgressBtn">🗑 ප්‍රගතිය මකන්න</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CREDITS SCREEN ===================== -->
+<section id="creditsScreen" class="screen">
+  <div class="sub-top-bar">
+    <button class="btn btn-back ripple" data-back="homeScreen">← ආපසු</button>
+    <h2>නිර්මාණකරු</h2>
+  </div>
+  <div class="content-wrap">
+    <div class="glass-card slide-in credits-card">
+      <div class="logo-owl small-owl wiggle">🦉</div>
+      <h3 class="section-title">සයිබර් රකුසා</h3>
+      <p>ළමුන් සහ තරුණයන් සඳහා නිර්මාණය කළ අන්තර්ජාල ආරක්ෂණ අධ්‍යාපනික ක්‍රීඩාවකි.</p>
+      <p class="credits-thanks">සෙල්ලම් කිරීම ගැන ස්තූතියි — නවතම ලෙස ආරක්ෂිතව සිටින්න! 🔐</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATISTICS SCREEN ===================== -->
+<section id="statsScreen" class="screen">
+  <div class="sub-top-bar">
+    <button class="btn btn-back ripple" data-back="homeScreen">← ආපසු</button>
+    <h2>සංඛ්‍යාලේඛන</h2>
+  </div>
+  <div class="content-wrap">
+    <div class="stats-grid">
+      <div class="glass-card stat-card zoom-in">
+        <div class="stat-circle-wrap">
+          <svg class="progress-circle" viewBox="0 0 120 120">
+            <circle class="progress-circle-bg" cx="60" cy="60" r="52"></circle>
+            <circle class="progress-circle-fill" id="accuracyCircle" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <div class="circle-label" id="accuracyLabel">0%</div>
+        </div>
+        <p class="stat-card-title">නිරවද්‍යතාව</p>
+      </div>
+      <div class="glass-card stat-card zoom-in">
+        <div class="stat-big-num" id="statCorrect">0</div>
+        <p class="stat-card-title">නිවැරදි පිළිතුරු</p>
+      </div>
+      <div class="glass-card stat-card zoom-in">
+        <div class="stat-big-num" id="statMistakes">0</div>
+        <p class="stat-card-title">මුළු වැරදි</p>
+      </div>
+      <div class="glass-card stat-card zoom-in">
+        <div class="stat-big-num" id="statBestScore">0</div>
+        <p class="stat-card-title">හොඳම ලකුණු</p>
+      </div>
+      <div class="glass-card stat-card zoom-in">
+        <div class="stat-big-num" id="statGamesPlayed">0</div>
+        <p class="stat-card-title">ක්‍රීඩා කළ ගණන</p>
+      </div>
+      <div class="glass-card stat-card zoom-in">
+        <div class="stat-big-num" id="statTotalXP">0</div>
+        <p class="stat-card-title">මුළු XP</p>
+      </div>
+    </div>
+
+    <div class="glass-card slide-in">
+      <h3 class="section-title">🏅 සම්මාන</h3>
+      <div class="badges-grid" id="badgesGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HIGH SCORE SCREEN ===================== -->
+<section id="highScoreScreen" class="screen">
+  <div class="sub-top-bar">
+    <button class="btn btn-back ripple" data-back="homeScreen">← ආපසු</button>
+    <h2>ඉහළම ලකුණු</h2>
+  </div>
+  <div class="content-wrap">
+    <div class="glass-card slide-in">
+      <table class="score-table">
+        <thead>
+          <tr><th>#</th><th>නම</th><th>ලකුණු</th><th>මට්ටම</th><th>දිනය</th></tr>
+        </thead>
+        <tbody id="highScoreTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GAMEPLAY SCREEN ===================== -->
+<section id="gameScreen" class="screen">
+  <div class="game-hud">
+    <div class="hud-left">
+      <button class="icon-btn ripple" id="pauseBtn" title="විරාමය">⏸</button>
+      <span class="hud-level-name" id="hudLevelName">මට්ටම 1 — වංචා ඊමේල්</span>
+    </div>
+    <div class="hud-mid">
+      <div class="hearts-wrap" id="heartsWrap"></div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-stat"><span class="hud-icon">⭐</span><span id="hudScore">0</span></div>
+      <div class="hud-stat"><span class="hud-icon">⚡</span><span id="hudXP">0</span></div>
+      <div class="hud-stat combo-stat"><span class="hud-icon">🔥</span><span id="hudCombo">x1</span></div>
+      <div class="hud-stat"><span class="hud-icon">⏱</span><span id="hudTimer">30</span></div>
+    </div>
+  </div>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="gameProgressFill"></div>
+  </div>
+
+  <div class="content-wrap game-content-wrap">
+    <div class="glass-card question-card fade-in" id="questionCard">
+      <div class="question-meta">
+        <span id="questionCounter">ප්‍රශ්නය 1 / 10</span>
+        <span id="questionDiffBadge" class="diff-badge">පහසු</span>
+      </div>
+      <h3 class="question-text" id="questionText">ප්‍රශ්නය පූරණය වෙමින්...</h3>
+      <div id="questionExtra" class="question-extra"></div>
+      <div class="answers-grid" id="answersGrid"></div>
+      <div class="feedback-box" id="feedbackBox"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="pauseOverlay">
+    <div class="glass-card overlay-card zoom-in">
+      <h2>⏸ විරාමයේ</h2>
+      <div class="overlay-buttons">
+        <button class="btn btn-primary ripple" id="resumeBtn">▶ දිගටම කරගෙන යන්න</button>
+        <button class="btn btn-secondary ripple" id="restartLevelBtn">🔄 මට්ටම නැවත අරඹන්න</button>
+        <button class="btn btn-secondary ripple" id="quitToMenuBtn">🏠 මුල් පිටුවට</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULTS SCREEN ===================== -->
+<section id="resultsScreen" class="screen">
+  <div class="content-wrap">
+    <div class="glass-card result-card zoom-in" id="resultCard">
+      <div class="result-icon" id="resultIcon">🏆</div>
+      <h2 class="result-title" id="resultTitle">මෙහෙයුම සම්පූර්ණයි!</h2>
+      <p class="result-sub" id="resultSub">ඔබ ජාලය සාර්ථකව ආරක්ෂා කළා.</p>
+
+      <div class="result-stats">
+        <div class="result-stat"><span class="rs-label">ලකුණු</span><span class="rs-value" id="resultScore">0</span></div>
+        <div class="result-stat"><span class="rs-label">XP</span><span class="rs-value" id="resultXP">0</span></div>
+        <div class="result-stat"><span class="rs-label">නිරවද්‍යතාව</span><span class="rs-value" id="resultAccuracy">0%</span></div>
+        <div class="result-stat"><span class="rs-label">හොඳම Combo</span><span class="rs-value" id="resultCombo">x1</span></div>
+      </div>
+
+      <div class="result-buttons">
+        <button class="btn btn-secondary ripple" id="prevLevelBtn">⬅ පෙර මට්ටම</button>
+        <button class="btn btn-primary ripple" id="nextLevelBtn">ඊළඟ මට්ටම ➡</button>
+        <button class="btn btn-secondary ripple" id="retryLevelBtn">🔄 නැවත උත්සාහ කරන්න</button>
+        <button class="btn btn-secondary ripple" id="certificateBtn">📜 සහතිකය</button>
+        <button class="btn btn-secondary ripple" id="resultMenuBtn">🏠 මුල් පිටුව</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GAME OVER SCREEN ===================== -->
+<section id="gameOverScreen" class="screen">
+  <div class="content-wrap">
+    <div class="glass-card result-card zoom-in">
+      <div class="result-icon">🌙</div>
+      <h2 class="result-title">රකුසා ජය ගත්තා!</h2>
+      <p class="result-sub">ඔබේ ජීවිත අවසන් විය. ඉඟි බලා නැවත උත්සාහ කරන්න.</p>
+      <div class="result-stats">
+        <div class="result-stat"><span class="rs-label">ලකුණු</span><span class="rs-value" id="gameOverScore">0</span></div>
+        <div class="result-stat"><span class="rs-label">ළඟා වූ ප්‍රශ්නය</span><span class="rs-value" id="gameOverQuestion">Q1</span></div>
+      </div>
+      <div class="result-buttons">
+        <button class="btn btn-primary ripple" id="gameOverRetryBtn">🔄 නැවත උත්සාහ කරන්න</button>
+        <button class="btn btn-secondary ripple" id="gameOverMenuBtn">🏠 මුල් පිටුව</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CERTIFICATE SCREEN ===================== -->
+<section id="certificateScreen" class="screen">
+  <div class="sub-top-bar">
+    <button class="btn btn-back ripple" data-back="resultsScreen">← ආපසු</button>
+    <h2>සහතිකය</h2>
+  </div>
+  <div class="content-wrap">
+    <div class="certificate fade-in" id="certificateBox">
+      <div class="cert-border">
+        <div class="cert-owl">🦉</div>
+        <h2 class="cert-title">ජයග්‍රහණ සහතිකය</h2>
+        <p class="cert-text">මෙයින් සහතික කරන්නේ</p>
+        <h3 class="cert-name" id="certName">ක්‍රීඩකයා</h3>
+        <p class="cert-text">සාර්ථකව සම්පූර්ණ කර ඇති බවයි</p>
+        <h3 class="cert-level" id="certLevel">සයිබර් රකුසා පුහුණුව</h3>
+        <p class="cert-text">ලකුණු <span id="certScore">0</span> ක් ලබාගනිමින්</p>
+        <p class="cert-date" id="certDate">දිනය</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
